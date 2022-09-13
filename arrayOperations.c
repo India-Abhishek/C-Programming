@@ -4,6 +4,73 @@ C program for traverse, sort, delete and insert in array using pointers.
 
 #include<stdio.h>
 #include<stdlib.h>
+void main(){
+    int n,ch,i,c;
+    printf("Enter Size to create an array: ");
+    scanf("%d",&n);
+    int *arr;
+    //create arr with size
+    arr=(int*)malloc(n*sizeof(int));
+    
+    while(1){
+        printf("Enter no of elements: ");
+        scanf("%d",&n);
+
+        //reallocating size of the array
+        arr=realloc(arr,n*sizeof(int));
+
+        //taking input in array
+        printf("Enter elements: \n");
+        for(i=0; i<n; i++){
+            scanf("%d",&arr[i]);
+        }
+        
+        printf("Choose any one option: \n");
+        printf("\n---------------MENU------------------\n");
+        printf("\t 1.Traverse\n");
+        printf("\t 2.insert\n");
+        printf("\t 3.Delete\n");
+        printf("\t 4.Search\n");
+        printf("\t 5.Sort\n");
+        scanf("%d",&ch);
+        
+        switch (ch)
+        {
+        case 1:
+        traverse(arr,n);
+        break;
+
+        case 2:
+        insert(arr,n);
+        break;
+
+        case 3:
+        delete(arr,n);
+        break;
+
+        case 4:
+        search(arr,n);
+        break;
+
+        case 5:
+        sort(arr,n);
+        break;
+        
+        
+        default:
+        printf("Invalid Input");
+        break;
+        }
+        printf("\n DO YOU WANT MENU AGAIN ?\n");
+        printf("Type '1' for YES or '0' for NO\n");
+        scanf("%d",&c);
+        if(c==0){
+            break;
+        }
+        
+    }
+    free(arr);
+}
 
 void traverse(int *arr,int n){
     int i;
@@ -95,72 +162,4 @@ void sort(int *arr, int n){
     for(i=0; i<n; i++){
         printf("%d\t",arr[i]);
     }
-}
-
-void main(){
-    int n,ch,i,c;
-    printf("Enter Size to create an array: ");
-    scanf("%d",&n);
-    int *arr;
-    //create arr with size
-    arr=(int*)malloc(n*sizeof(int));
-    
-    while(1){
-        printf("Enter no of elements: ");
-        scanf("%d",&n);
-
-        //reallocating size of the array
-        arr=realloc(arr,n*sizeof(int));
-
-        //taking input in array
-        printf("Enter elements: \n");
-        for(i=0; i<n; i++){
-            scanf("%d",&arr[i]);
-        }
-        
-        printf("Choose any one option: \n");
-        printf("\n---------------MENU------------------\n");
-        printf("\t 1.Traverse\n");
-        printf("\t 2.insert\n");
-        printf("\t 3.Delete\n");
-        printf("\t 4.Search\n");
-        printf("\t 5.Sort\n");
-        scanf("%d",&ch);
-        
-        switch (ch)
-        {
-        case 1:
-        traverse(arr,n);
-        break;
-
-        case 2:
-        insert(arr,n);
-        break;
-
-        case 3:
-        delete(arr,n);
-        break;
-
-        case 4:
-        search(arr,n);
-        break;
-
-        case 5:
-        sort(arr,n);
-        break;
-        
-        
-        default:
-        printf("Invalid Input");
-        break;
-        }
-        printf("\n DO YOU WANT MENU AGAIN ?\n");
-        printf("Type '1' for YES or '0' for NO\n");
-        scanf("%d",&c);
-        if(c==0){
-            break;
-        }
-        
-    }
-    free(arr);
 }
