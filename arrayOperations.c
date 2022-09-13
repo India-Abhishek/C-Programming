@@ -1,3 +1,7 @@
+/*
+traverse, sort, delete and insert an array using pointers
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
