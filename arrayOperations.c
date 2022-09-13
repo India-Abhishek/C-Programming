@@ -25,7 +25,7 @@ void insert(int *arr, int n){
     n++; 
 
     // shift elements forward
-    for(i=n-1; i>pos; i--){
+    for(i=n-1; i>=pos; i--){
         arr[i]=arr[i-1];
     }
 
