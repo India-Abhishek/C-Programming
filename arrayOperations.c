@@ -112,9 +112,9 @@ void main(){
         for(i=0; i<n; i++){
             scanf("%d",&arr[i]);
         }
-
-        printf("\n---------------MENU------------------\n");
+        
         printf("Choose any one option: \n");
+        printf("\n---------------MENU------------------\n");
         printf("\t 1.Traverse\n");
         printf("\t 2.insert\n");
         printf("\t 3.Delete\n");
