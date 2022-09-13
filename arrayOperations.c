@@ -1,5 +1,5 @@
 /*
-traverse, sort, delete and insert an array using pointers
+C program for traverse, sort, delete and insert in array using pointers.
 */
 
 #include<stdio.h>
@@ -163,6 +163,4 @@ void main(){
         
     }
     free(arr);
-    getchar();
-
 }
