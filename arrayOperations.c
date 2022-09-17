@@ -127,6 +127,7 @@ void main(){
         printf("\t 5.Sort\n");
         scanf("%d",&ch);
         
+        // calling functions by choices
         switch (ch)
         {
         case 1:
